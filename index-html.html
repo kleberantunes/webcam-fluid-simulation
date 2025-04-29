@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Fluido com Detecção de Movimento das Mãos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <canvas id="fluidCanvas"></canvas>
+        <canvas id="webcamCanvas"></canvas>
+        <video id="webcamVideo" autoplay playsinline></video>
+        
+        <div id="controls">
+            <div class="slider-container">
+                <label for="sensitivity">Sensibilidade:</label>
+                <input type="range" id="sensitivity" min="1" max="100" value="30">
+                <span id="sensitivityValue">30</span>
+            </div>
+            <div class="slider-container">
+                <label for="fluidDensity">Densidade do Fluido:</label>
+                <input type="range" id="fluidDensity" min="1" max="100" value="80">
+                <span id="fluidDensityValue">80</span>
+            </div>
+            <div class="slider-container">
+                <label for="fluidVelocity">Velocidade do Fluido:</label>
+                <input type="range" id="fluidVelocity" min="1" max="100" value="90">
+                <span id="fluidVelocityValue">90</span>
+            </div>
+            <div class="slider-container">
+                <label for="colorMode">Modo de Cor:</label>
+                <select id="colorMode">
+                    <option value="rainbow">Arco-íris</option>
+                    <option value="blue">Azul</option>
+                    <option value="red">Vermelho</option>
+                    <option value="random">Aleatório</option>
+                </select>
+            </div>
+            <button id="startBtn">Iniciar Webcam</button>
+            <button id="resetBtn">Resetar Simulação</button>
+        </div>
+        
+        <div id="status">Aguardando inicialização da webcam...</div>
+    </div>
+
+    <!-- Incluindo os scripts do WebGL e da simulação de fluidos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
